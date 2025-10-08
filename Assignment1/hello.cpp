@@ -1,3 +1,7 @@
+/*
+ * Here I define the function sayHello
+ */
+
 #include "hello.h"
 
 #include <iostream>
