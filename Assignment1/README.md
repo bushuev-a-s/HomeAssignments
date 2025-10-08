@@ -1,6 +1,6 @@
 # Assignment1
 ## Author
-Bushuev Alexander 25.Б81-мм
+Бушуев Александр Сергеевич 25.Б81-мм
 ## Contacts
 st140044@stdudent.spbu.ru
 ## Description
