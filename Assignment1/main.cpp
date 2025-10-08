@@ -5,13 +5,14 @@
  * Main file
  */
 #include "hello.h"
+#include <iostream>
 
 int main() {
-	char c = "world"
+	std::string c = "world";
 	myproject::sayHello(c);
-	while (True) {
-		char c2
-		std:: cin>>c2
+	while (true) {
+		std::string c2;
+		std:: cin>>c2;
 		myproject::sayHello(c2);
 	}
 	return 0;

@@ -2,6 +2,6 @@
 
 #include <iostream>
 
-void myproject::sayHello(const std::string& name) {
-	std::cout << "Hello, " << name << "!\n" << std::end1;
+void myproject::sayHello(std::string s) {
+	std::cout << "Hello, " << s << "!\n" << std::endl;
 }
