@@ -4,12 +4,15 @@
  * My first home assignment
  * Main file
  */
-#include <iostream>
+#include "hello.h"
 
 int main() {
-	myproject::sayHello("world");
-	while True {
-		myproject::sayHello();
+	char c = "world"
+	myproject::sayHello(c);
+	while (True) {
+		char c2
+		std:: cin>>c2
+		myproject::sayHello(c2);
 	}
 	return 0;
 }
