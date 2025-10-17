@@ -1,18 +1,18 @@
 PROJECT = hello
 CXX = g++
-CXXFLAGS = −Wall −Wextra
+CXXFLAGS = -Wall -Wextra -pedantic
 SRC = main.cpp hello.cpp
-OBJ = $ (SRC: .cpp=.o)
-
-.PHONY: all clean
+OBJ = $(SRC:.cpp=.o)
 
 all: $(PROJECT)
 
 $(PROJECT): $(OBJ)
-	$(CXX) −o $@ $^ $(CXXFLAGS)
+	$(CXX) -o $@ $^
 
 %.o: %.cpp
-	$(CXX) −c −o $@ $< $(CXXFLAGS)
+	$(CXX) -c $< -o $@ $(CXXFLAGS)
 
 clean:
 	rm -f $(OBJ) $(PROJECT)
+
+.PHONY: all clean
