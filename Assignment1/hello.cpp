@@ -1,4 +1,7 @@
 /*
+ * Alexander Bushuev
+ * st140044@student.spbu.ru
+ * My first home assignment
  * Here I define the function sayHello
  */
 
