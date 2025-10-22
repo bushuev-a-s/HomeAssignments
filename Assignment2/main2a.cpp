@@ -5,17 +5,8 @@
  * Main file
  */
 
-#include <iostream>
+#include "invertText.h"
 
 int main() {
-    std::ifstream infile;
-    infile.open("source.pdf",std::ios::binary|std::ios::in);
-    std::ofstream outfile;
-    std::outfile.open("temppdf.pdf",std::ios::binary|std::ios::out);
-    infile.read((char *)&buffer,sizeof(buffer))
-    outfile.write((char *)&buffer,sizeof(buffer));
-    infile.close();
-    outfile.close();
-
-    
+    invertText();
 }
