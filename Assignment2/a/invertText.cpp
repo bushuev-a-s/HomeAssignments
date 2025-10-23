@@ -9,7 +9,7 @@
 #include <filesystem>
 
 void invertText(){
-    std::instream infile;
+    std::ifstream infile;
     infile.open("source.pdf",std::ios::binary|std::ios::in);
 
     int filesize=std::filesystem::file_size("source.pdf");
@@ -23,7 +23,7 @@ void invertText(){
 
     delete[] array;
     std::ofstream outfile;
-    std::outfile.open("temppdf.pdf",std::ios::binary|std::ios::out);
+    outfile.open("temppdf.pdf",std::ios::binary|std::ios::out);
     outfile.write(reverse,filesize);
     delete[] reverse;
 

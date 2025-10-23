@@ -7,12 +7,12 @@ OBJ = $(SRC:.cpp=.o)
 all: $(PROJECT)
 
 $(PROJECT): $(OBJ)
-        $(CXX) -o $@ $^
+	$(CXX) -o $@ $^
 
 %.o: %.cpp
-        $(CXX) -c $< -o $@ $(CXXFLAGS)
+	$(CXX) -c $< -o $@ $(CXXFLAGS)
 
 clean:
-        rm -f $(OBJ) $(PROJECT) %.pdf
+	rm -f $(OBJ) $(PROJECT) %.pdf
 
 .PHONY: all clean
