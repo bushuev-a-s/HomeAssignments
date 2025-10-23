@@ -12,7 +12,7 @@ int main() {
 	myproject::sayHello(c);
 	while (true) {
 		std::string c2;
-		std:: cin>>c2;
+		std::getline(std::cin,c2);
 		myproject::sayHello(c2);
 	}
 	return 0;
