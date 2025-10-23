@@ -6,13 +6,21 @@
  */
 
 #include <iostream>
+#include <string>
 
 int main() {
     int stacksize=0;
     int stack[stacksize];
-    while (std::cin.peek() != EOF){
-        char data;
-        std::cin>>data;
+    char data;
+    std::string polish;
+    std::getline(std::cin,polish);
+    char stringArray[polish.length()];
+    for (int i=0; i<polish.length(); i++){
+        stringArray[i]=polish[i];
+    }
+    for (int i=0; i<polish.length(); i+=2){
+        data=stringArray[i];
+        std::cout<<data<<std::endl;
         if(data=='+'||data=='-'||data=='*'||data=='/'){
             int result;
             if (data=='+'){
@@ -39,6 +47,7 @@ int main() {
                     stacksize--;
                 }
             }
+            std::cout<<result<<std::endl;
             stacksize=1;
             delete[] stack;
             int stack[stacksize]={result};
