@@ -10,62 +10,84 @@
 
 int main() {
     int stacksize=0;
-    int stack[stacksize];
-    char data;
+    float* stack=new float[stacksize];
+    std::string temp;
+    std::string temp2;
     std::string polish;
     std::getline(std::cin,polish);
-    char stringArray[polish.length()];
-    for (int i=0; i<polish.length(); i++){
-        stringArray[i]=polish[i];
+    int spaces=0;
+    for (char ch:polish){
+        if (ch==' '){
+            spaces++;
+        }
     }
-    for (int i=0; i<polish.length(); i+=2){
-        data=stringArray[i];
-        std::cout<<data<<std::endl;
-        if(data=='+'||data=='-'||data=='*'||data=='/'){
-            int result;
-            if (data=='+'){
+    std::string array=new std::string[spaces+1];
+    int cnt=0;
+    for (char ch:polish){
+        if (ch=='+'||ch=='-'||ch=='*'||ch=='/'){
+            temp2=ch
+            array[cnt]=temp2;
+            cnt++;
+        }
+        else if (ch==' '){
+            array[cnt]=temp;
+            temp="";
+            cnt++;
+        }
+        else{
+            temp+=ch;
+        }
+    }
+    std::string data;
+    for (int i=0; i<spaces+1; i++){
+        data=array[i];
+        //std::cout<<data<<std::endl;
+        if(data=="+"||data=="-"||data=="*"||data=="/"){
+            float result;
+            if (data=="+"){
                 while (stacksize>0){
                     result+=stack[stacksize-1];
                     stacksize--;
                 }
             }
-            if (data=='-'){
+            if (data=="-"){
                 while (stacksize>0){
                     result-=stack[stacksize-1];
                     stacksize--;
                 }
             }
-            if (data=='*'){
+            if (data=="*"){
                 while (stacksize>0){
                     result*=stack[stacksize-1];
                     stacksize--;
                 }
             }
-            if (data=='/'){
+            if (data=="/"){
                 while (stacksize>0){
                     result/=stack[stacksize-1];
                     stacksize--;
                 }
             }
-            std::cout<<result<<std::endl;
+            //std::cout<<result<<std::endl;
             stacksize=1;
             delete[] stack;
-            int stack[stacksize]={result};
+            float* stack=new float[stacksize];
+            stack[0]=result;
         }
         else{
-            int tempstack[stacksize];
+            float* tempstack=new float[stacksize];
             for (int i=0;i<stacksize;i++){
                 tempstack[i]=stack[i];
             }
             delete[] stack;
             stacksize++;
-            int stack[stacksize];
+            float* stack=new float[stacksize];
             for (int i=0;i<stacksize;i++){
                 stack[i]=tempstack[i];
             }
             delete[] tempstack;
-            stack[-1]=data;
+            stack[-1]=std::stof(data);
         }
     }
-    std::cout<<stack[0];
+    //std::cout<<stack[0];
 }
