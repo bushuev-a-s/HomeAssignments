@@ -1,0 +1,18 @@
+/*
+ * Alexander Bushuev
+ * st140044@student.spbu.ru
+ * Home assignment 3
+ * Header file for Driveable autobot class
+ */
+
+#ifndef Driveable
+#define Driveable
+class Driveable: public Autobot {
+public:
+    Driveable(Pilot pilot);
+    bool obey();
+private:
+    uint _seats;
+    Pilot _pilot;
+};
+#endif
