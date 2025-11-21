@@ -21,11 +21,11 @@ int main() {
             spaces++;
         }
     }
-    std::string array=new std::string[spaces+1];
+    std::string* array=new std::string[spaces+1];
     int cnt=0;
     for (char ch:polish){
         if (ch=='+'||ch=='-'||ch=='*'||ch=='/'){
-            temp2=ch
+            temp2=ch;
             array[cnt]=temp2;
             cnt++;
         }
