@@ -13,6 +13,7 @@ public:
     bool move();
     bool fire();
     bool transform();
+    ~Transformer();
 private:
     uint _ammo;
     uint _level;
