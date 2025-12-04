@@ -9,8 +9,7 @@
 #include <string>
 
 int main() {
-    int stacksize=0;
-    float* stack=new float[stacksize];
+    int pointer=-1;
     std::string temp;
     std::string temp2;
     std::string polish;
@@ -21,6 +20,7 @@ int main() {
             spaces++;
         }
     }
+    float* stack=new float[spaces+1];
     std::string* array=new std::string[spaces+1];
     int cnt=0;
     for (char ch:polish){
@@ -43,51 +43,26 @@ int main() {
         data=array[i];
         //std::cout<<data<<std::endl;
         if(data=="+"||data=="-"||data=="*"||data=="/"){
-            float result;
+            pointer-=1;
             if (data=="+"){
-                while (stacksize>0){
-                    result+=stack[stacksize-1];
-                    stacksize--;
-                }
+                stack[pointer]=stack[pointer]+stack[pointer+1];
             }
             if (data=="-"){
-                while (stacksize>0){
-                    result-=stack[stacksize-1];
-                    stacksize--;
-                }
+                stack[pointer]=stack[pointer]-stack[pointer+1];
             }
             if (data=="*"){
-                while (stacksize>0){
-                    result*=stack[stacksize-1];
-                    stacksize--;
-                }
+                stack[pointer]=stack[pointer]*stack[pointer+1];
             }
             if (data=="/"){
-                while (stacksize>0){
-                    result/=stack[stacksize-1];
-                    stacksize--;
-                }
+                stack[pointer]=stack[pointer]/stack[pointer+1];
             }
             //std::cout<<result<<std::endl;
-            stacksize=1;
-            delete[] stack;
-            float* stack=new float[stacksize];
-            stack[0]=result;
         }
         else{
-            float* tempstack=new float[stacksize];
-            for (int i=0;i<stacksize;i++){
-                tempstack[i]=stack[i];
-            }
-            delete[] stack;
-            stacksize++;
-            float* stack=new float[stacksize];
-            for (int i=0;i<stacksize;i++){
-                stack[i]=tempstack[i];
-            }
-            delete[] tempstack;
-            stack[-1]=std::stof(data);
+            pointer+=1;
+            stack[pointer]=std::stof(data);
         }
     }
-    //std::cout<<stack[0];
+    delete[] stack;
+    std::cout<<stack[0];
 }
