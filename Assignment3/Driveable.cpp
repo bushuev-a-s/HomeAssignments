@@ -12,3 +12,19 @@ bool Driveable::obey() {
 Driveable::Driveable() {
 
 };
+
+uint Driveable::getSeats() {
+    return _seats;
+};
+
+void Driveable::setSeats(uint seats) {
+    _seats=seats;
+};
+
+Pilot Driveable::getPilot() {
+    return *_pilot;
+};
+
+void Driveable::setPilot(Pilot *pilot) {
+    *_pilot=*pilot;
+};

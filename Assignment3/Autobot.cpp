@@ -12,3 +12,19 @@ bool Autobot::ultimate() {
 Autobot::Autobot() {
 
 };
+
+uint Autobot::getStrength() {
+    return _strength;
+};
+
+void Autobot::setStrength(uint strength) {
+    _strength=strength;
+};
+
+uint Autobot::getSize() {
+    return _size;
+};
+
+void Autobot::setSize(uint size) {
+    _size=size;
+};

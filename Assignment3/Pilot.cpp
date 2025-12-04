@@ -8,3 +8,12 @@
 bool Pilot::drive() {
     return true;
 };
+
+std::string Autobot::getName() {
+    return _name;
+};
+
+void Autobot::setName(std::string Name) {
+    _name=name;
+};
+

@@ -12,3 +12,19 @@ bool Decepticon::destroy() {
 Decepticon::Decepticon() {
 
 };
+
+uint Decepticon::getEvilness() {
+    return _evilness;
+};
+
+void Decepticon::setEvilness(uint evilness) {
+    _evilness=evilness;
+};
+
+uint Decepticon::getToughness() {
+    return _toughness;
+};
+
+void Decepticon::setToughness(uint toughness) {
+    _toughness=toughness;
+};
