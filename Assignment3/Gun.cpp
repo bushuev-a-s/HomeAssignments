@@ -8,19 +8,24 @@
 bool Gun::upgrade() {
     return true;
 };
-
-uint Autobot::getRange() {
+/*
+Gun::Gun() {
+    _range=7;
+    _damage=5;
+};
+*/
+uint Gun::getRange() {
     return _range;
 };
 
-void Autobot::setRange(uint range) {
+void Gun::setRange(uint range) {
     _range=range;
 };
 
-uint Autobot::getDamage() {
+uint Gun::getDamage() {
     return _damage;
 };
 
-void Autobot::setDamage(uint damage) {
+void Gun::setDamage(uint damage) {
     _damage=damage;
 };

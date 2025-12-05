@@ -10,6 +10,7 @@
 class Gun {
 public:
     bool upgrade();
+    Gun();
 private:
     uint _range;
     uint _damage;

@@ -9,11 +9,11 @@ bool Pilot::drive() {
     return true;
 };
 
-std::string Autobot::getName() {
+std::string Pilot::getName() {
     return _name;
 };
 
-void Autobot::setName(std::string Name) {
+void Pilot::setName(std::string name) {
     _name=name;
 };
 
