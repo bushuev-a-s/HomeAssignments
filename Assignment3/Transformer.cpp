@@ -18,7 +18,24 @@ bool Transformer::transform() {
 };
 
 Transformer::Transformer() {
+    _ammo=100;
+    _level=10;
+    _exp=300;
+    _gun=nullptr;
+};
 
+Transformer::Transformer(uint ammo, uint level, uint exp, Gun *gun) {
+    _ammo=ammo;
+    _level=level;
+    _exp=exp;
+    _gun=*gun;
+};
+
+Transformer::Transformer(Gun *gun) {
+    _ammo=100;
+    _level=10;
+    _exp=300;
+    _gun=*gun;
 };
 
 Transformer::~Transformer() {

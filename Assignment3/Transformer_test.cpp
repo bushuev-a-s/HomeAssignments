@@ -9,17 +9,16 @@
 #include "Gun.h"
 
 TEST(Transformer, GettersTest) {
-    Gun* gun=new Gun;
-    Transformer Tr(100, 10, 300, gun);
+    Transformer Tr();
     EXPECT_EQ(Tr.getAmmo(), 100);
     EXPECT_EQ(Tr.getLevel(), 10);
     EXPECT_EQ(Tr.getExp(), 300);
-    EXPECT_EQ(Tr.getGun(), gun)
+    EXPECT_EQ(Tr.getGun(), nullptr);
+    delete gun;
 }
 
 TEST(Transformer, MethodsTest) {
-    Gun* gun=new Gun;
-    Transformer Tr(100, 10, 300, gun);
+    Transformer Tr();
     ASSERT_TRUE(Tr.move());
     ASSERT_TRUE(Tr.fire());
     ASSERT_TRUE(Tr.transform());

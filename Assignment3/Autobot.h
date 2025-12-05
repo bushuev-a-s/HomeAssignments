@@ -10,6 +10,7 @@
 class Autobot: public Transformer {
 public:
     Autobot();
+    Autobot(Gun *gun);
     bool ultimate();
 private:
     uint _size;

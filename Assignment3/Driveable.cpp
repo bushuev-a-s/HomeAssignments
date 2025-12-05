@@ -10,6 +10,11 @@ bool Driveable::obey() {
 };
 
 Driveable::Driveable() {
+    _seats=4;
+    _pilot=Pilot pilot();
+};
+
+Driveable::Driveable(Gun *gun): Autobot(*gun), _seats(4), _pilot(Pilot pilot()) {
 
 };
 

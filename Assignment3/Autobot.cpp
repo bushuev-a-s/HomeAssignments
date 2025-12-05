@@ -10,6 +10,11 @@ bool Autobot::ultimate() {
 };
 
 Autobot::Autobot() {
+    _size=15;
+    _strength=50;
+};
+
+Autobot::Autobot(Gun *gun): Transformer(*gun), _size(15_), _strength(50) {
 
 };
 

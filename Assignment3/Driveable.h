@@ -9,7 +9,8 @@
 #define Driveable
 class Driveable: public Autobot {
 public:
-    Driveable(Pilot pilot);
+    Driveable(uint _seats, Pilot pilot);
+    Driveable();
     bool obey();
 private:
     uint _seats;

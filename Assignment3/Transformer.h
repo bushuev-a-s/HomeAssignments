@@ -9,7 +9,8 @@
 #define Base
 class Transformer {
 public:
-    Transformer(Gun *gun);
+    Transformer(uint ammo, uint level, uint exp, Gun *gun);
+    Transformer();
     bool move();
     bool fire();
     bool transform();

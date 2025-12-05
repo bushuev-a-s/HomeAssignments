@@ -10,6 +10,11 @@ bool Decepticon::destroy() {
 };
 
 Decepticon::Decepticon() {
+    _toughness=15;
+    _evilness=50;
+};
+
+Decepticon::Decepticon(Gun *gun): Transformer(*gun), _toughness(15_), _evilness(50) {
 
 };
 
