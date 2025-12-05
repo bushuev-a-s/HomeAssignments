@@ -5,6 +5,8 @@
  * Cpp file for Gun class
  */
 
+#include "Gun.h"
+
 bool Gun::upgrade() {
     return true;
 };

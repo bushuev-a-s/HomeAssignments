@@ -6,7 +6,6 @@
 
 #include <gtest/gtest.h>
 #include "Transformer.h"
-#include "Gun.h"
 
 TEST(Transformer, GettersTest) {
     Transformer Tr();
@@ -14,7 +13,6 @@ TEST(Transformer, GettersTest) {
     EXPECT_EQ(Tr.getLevel(), 10);
     EXPECT_EQ(Tr.getExp(), 300);
     EXPECT_EQ(Tr.getGun(), nullptr);
-    delete gun;
 }
 
 TEST(Transformer, MethodsTest) {

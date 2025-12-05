@@ -10,6 +10,7 @@
 class Decepticon: public Transformer {
 public:
     Decepticon();
+    Decepticon(Gun *gun);
     bool destroy();
 private:
     uint _evilness;

@@ -5,6 +5,8 @@
  * Cpp file for Pilot class
  */
 
+#include "Pilot.h"
+
 bool Pilot::drive() {
     return true;
 };

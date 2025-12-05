@@ -5,6 +5,8 @@
  * Cpp file for Autobot class
  */
 
+#include "Autobot.h"
+
 bool Autobot::ultimate() {
     return true;
 };

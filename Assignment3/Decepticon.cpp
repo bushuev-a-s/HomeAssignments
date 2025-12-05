@@ -5,6 +5,8 @@
  * Cpp file for Decepticon class
  */
 
+#include "Decepticon.h"
+
 bool Decepticon::destroy() {
     return true;
 };

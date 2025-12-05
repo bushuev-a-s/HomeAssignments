@@ -11,6 +11,7 @@ class Transformer {
 public:
     Transformer(uint ammo, uint level, uint exp, Gun *gun);
     Transformer();
+    Transformer(Gun *gun);
     bool move();
     bool fire();
     bool transform();

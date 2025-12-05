@@ -5,6 +5,8 @@
  * Cpp file for base class
  */
 
+#include "Transformer.h"
+
 bool Transformer::move() {
     return true;
 };
