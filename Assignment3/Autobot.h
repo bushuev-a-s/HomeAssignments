@@ -8,6 +8,7 @@
 #ifndef AUTOBOT_H
 #define AUTOBOT_H
 
+#include "Transformer.h"
 #include "Gun.h"
 
 class Autobot: public Transformer {

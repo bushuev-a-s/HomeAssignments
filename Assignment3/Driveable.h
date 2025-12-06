@@ -8,6 +8,7 @@
 #ifndef DRIVEABLE_H
 #define DRIVEABLE_H
 
+#include "Autobot.h"
 #include "Pilot.h"
 #include "Gun.h"
 

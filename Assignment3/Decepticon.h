@@ -8,6 +8,7 @@
 #ifndef DECEPTICON_H
 #define DECEPTICON_H
 
+#include "Transformer.h"
 #include "Gun.h"
 
 class Decepticon: public Transformer {
