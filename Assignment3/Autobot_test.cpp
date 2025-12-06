@@ -6,6 +6,7 @@
 
 #include <gtest/gtest.h>
 #include "Autobot.h"
+#include "Gun.h"
 
 TEST(Autobot, GettersTest) {
     Gun* gun=new Gun;

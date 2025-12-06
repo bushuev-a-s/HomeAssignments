@@ -6,6 +6,7 @@
 
 #include <gtest/gtest.h>
 #include "Driveable.h"
+#include "Gun.h"
 
 TEST(Driveable, GettersTest) {
     Gun* gun=new Gun;

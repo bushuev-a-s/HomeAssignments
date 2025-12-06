@@ -9,6 +9,7 @@
 #define DRIVEABLE_H
 
 #include "Pilot.h"
+#include "Gun.h"
 
 class Driveable: public Autobot {
 public:

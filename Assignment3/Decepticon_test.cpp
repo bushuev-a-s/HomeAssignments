@@ -6,6 +6,7 @@
 
 #include <gtest/gtest.h>
 #include "Decepticon.h"
+#include "Gun.h"
 
 TEST(Decepticon, GettersTest) {
     Gun* gun=new Gun;
