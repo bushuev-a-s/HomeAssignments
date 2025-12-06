@@ -9,25 +9,25 @@
 
 bool Gun::upgrade() {
     return true;
-};
+}
 /*
 Gun::Gun() {
     _range=7;
     _damage=5;
 };
 */
-uint Gun::getRange() {
+int Gun::getRange() {
     return _range;
-};
+}
 
-void Gun::setRange(uint range) {
+void Gun::setRange(int range) {
     _range=range;
-};
+}
 
-uint Gun::getDamage() {
+int Gun::getDamage() {
     return _damage;
-};
+}
 
-void Gun::setDamage(uint damage) {
+void Gun::setDamage(int damage) {
     _damage=damage;
-};
+}

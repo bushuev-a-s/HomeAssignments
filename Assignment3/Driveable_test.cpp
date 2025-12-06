@@ -16,7 +16,6 @@ TEST(Driveable, GettersTest) {
     EXPECT_EQ(Tr.getExp(), 300);
     EXPECT_EQ(Tr.getGun(), gun);
     EXPECT_EQ(Tr.getSeats(), 4);
-    EXPECT_NE(Tr.getPilot(), nullptr);
     delete gun;
 }
 

@@ -14,7 +14,7 @@
 
 class Driveable: public Autobot {
 public:
-    Driveable(Gun *gun);
+    Driveable(Gun* gun);
     Driveable();
 
     bool obey();
@@ -25,7 +25,7 @@ public:
     int getSeats();
     Pilot getPilot();
 private:
-    uint _seats;
+    int _seats;
     Pilot _pilot;
 };
 #endif

@@ -16,22 +16,22 @@ Autobot::Autobot() {
     _strength=50;
 };
 
-Autobot::Autobot(Gun *gun): Transformer(*gun), _size(15_), _strength(50) {
+Autobot::Autobot(Gun* gun): Transformer(gun), _size(15), _strength(50) {
 
 };
 
-uint Autobot::getStrength() {
+int Autobot::getStrength() {
     return _strength;
 };
 
-void Autobot::setStrength(uint strength) {
+void Autobot::setStrength(int strength) {
     _strength=strength;
 };
 
-uint Autobot::getSize() {
+int Autobot::getSize() {
     return _size;
 };
 
-void Autobot::setSize(uint size) {
+void Autobot::setSize(int size) {
     _size=size;
 };

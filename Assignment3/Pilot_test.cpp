@@ -13,7 +13,7 @@ TEST(Pilot, GettersTest) {
     EXPECT_EQ(pilot.getName(), "Max");
 }
 
-TEST(Gun, MethodsTest) {
+TEST(Pilot, MethodsTest) {
     Pilot pilot;
     ASSERT_TRUE(pilot.drive());
 }

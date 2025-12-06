@@ -14,7 +14,7 @@
 class Autobot: public Transformer {
 public:
     Autobot();
-    Autobot(Gun *gun);
+    Autobot(Gun* gun);
 
     bool ultimate();
 
@@ -24,7 +24,7 @@ public:
     int getSize();
     int getStrength();
 private:
-    uint _size;
-    uint _strength;
+    int _size;
+    int _strength;
 };
 #endif

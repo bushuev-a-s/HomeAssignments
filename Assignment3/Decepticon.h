@@ -14,7 +14,7 @@
 class Decepticon: public Transformer {
 public:
     Decepticon();
-    Decepticon(Gun *gun);
+    Decepticon(Gun* gun);
 
     bool destroy();
 
@@ -24,7 +24,7 @@ public:
     int getEvilness();
     int getToughness();
 private:
-    uint _evilness;
-    uint _toughness;
+    int _evilness;
+    int _toughness;
 };
 #endif

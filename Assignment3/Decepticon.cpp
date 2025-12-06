@@ -9,29 +9,24 @@
 
 bool Decepticon::destroy() {
     return true;
-};
+}
 
-Decepticon::Decepticon() {
-    _toughness=15;
-    _evilness=50;
-};
+Decepticon::Decepticon(): _evilness(50), _toughness(15) {}
 
-Decepticon::Decepticon(Gun *gun): Transformer(*gun), _toughness(15_), _evilness(50) {
+Decepticon::Decepticon(Gun* gun): Transformer(gun), _evilness(50), _toughness(15) {}
 
-};
-
-uint Decepticon::getEvilness() {
+int Decepticon::getEvilness() {
     return _evilness;
-};
+}
 
-void Decepticon::setEvilness(uint evilness) {
+void Decepticon::setEvilness(int evilness) {
     _evilness=evilness;
-};
+}
 
-uint Decepticon::getToughness() {
+int Decepticon::getToughness() {
     return _toughness;
-};
+}
 
-void Decepticon::setToughness(uint toughness) {
+void Decepticon::setToughness(int toughness) {
     _toughness=toughness;
-};
+}

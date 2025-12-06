@@ -11,20 +11,15 @@ bool Driveable::obey() {
     return true;
 };
 
-Driveable::Driveable() {
-    _seats=4;
-    _pilot=Pilot pilot();
-};
+Driveable::Driveable(): _seats(4), _pilot() {};
 
-Driveable::Driveable(Gun *gun): Autobot(*gun), _seats(4), _pilot(Pilot pilot()) {
+Driveable::Driveable(Gun* gun): Autobot(gun), _seats(4), _pilot() {};
 
-};
-
-uint Driveable::getSeats() {
+int Driveable::getSeats() {
     return _seats;
 };
 
-void Driveable::setSeats(uint seats) {
+void Driveable::setSeats(int seats) {
     _seats=seats;
 };
 
