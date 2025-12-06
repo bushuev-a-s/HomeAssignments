@@ -5,13 +5,23 @@
  * Header file for Driveable autobot class
  */
 
-#ifndef Driveable
-#define Driveable
+#ifndef DRIVEABLE_H
+#define DRIVEABLE_H
+
+#include "Pilot.h"
+
 class Driveable: public Autobot {
 public:
     Driveable(Gun *gun);
     Driveable();
+
     bool obey();
+
+    void setSeats(int evilness);
+    void setPilot(Pilot pilot);
+
+    int getSeats();
+    Pilot getPilot();
 private:
     uint _seats;
     Pilot _pilot;

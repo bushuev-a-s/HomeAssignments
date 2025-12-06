@@ -5,13 +5,20 @@
  * Header file for Decepticon class
  */
 
-#ifndef Decepticon
-#define Decepticon
+#ifndef DECEPTICON_H
+#define DECEPTICON_H
 class Decepticon: public Transformer {
 public:
     Decepticon();
     Decepticon(Gun *gun);
+
     bool destroy();
+
+    void setEvilness(int evilness);
+    void setToughness(int toughness);
+
+    int getEvilness();
+    int getToughness();
 private:
     uint _evilness;
     uint _toughness;

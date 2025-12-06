@@ -5,13 +5,20 @@
  * Header file for Autobot class
  */
 
-#ifndef Autobot
-#define Autobot
+#ifndef AUTOBOT_H
+#define AUTOBOT_H
 class Autobot: public Transformer {
 public:
     Autobot();
     Autobot(Gun *gun);
+
     bool ultimate();
+
+    void setSize(int size);
+    void setStrength(int strength);
+
+    int getSize();
+    int getStrength();
 private:
     uint _size;
     uint _strength;

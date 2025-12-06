@@ -7,11 +7,13 @@
 
 #include <string>
 
-#ifndef Pilot
-#define Pilot
+#ifndef PILOT_H
+#define PILOT_H
 class Pilot{
 public:
     bool drive();
+    std::string getName();
+    void setName(std::string);
 private:
     std::string _name;
 };
