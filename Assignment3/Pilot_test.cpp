@@ -8,12 +8,12 @@
 #include "Pilot.h"
 
 TEST(Pilot, GettersTest) {
-    Pilot pilot();
+    Pilot pilot;
     pilot.setName("Max");
     EXPECT_EQ(pilot.getName(), "Max");
 }
 
 TEST(Gun, MethodsTest) {
-    Pilot pilot();
+    Pilot pilot;
     ASSERT_TRUE(pilot.drive());
 }

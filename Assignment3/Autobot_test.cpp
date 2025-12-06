@@ -8,7 +8,7 @@
 #include "Autobot.h"
 
 TEST(Autobot, GettersTest) {
-    Gun* gun=new Gun();
+    Gun* gun=new Gun;
     Autobot Tr(gun);
     EXPECT_EQ(Tr.getAmmo(), 100);
     EXPECT_EQ(Tr.getLevel(), 10);
@@ -20,6 +20,6 @@ TEST(Autobot, GettersTest) {
 }
 
 TEST(Autobot, MethodsTest) {
-    Autobot Tr();
+    Autobot Tr;
     ASSERT_TRUE(Tr.ultimate());
 }

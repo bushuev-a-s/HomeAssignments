@@ -8,7 +8,7 @@
 #include "Transformer.h"
 
 TEST(Transformer, GettersTest) {
-    Transformer Tr();
+    Transformer Tr;
     EXPECT_EQ(Tr.getAmmo(), 100);
     EXPECT_EQ(Tr.getLevel(), 10);
     EXPECT_EQ(Tr.getExp(), 300);
@@ -16,7 +16,7 @@ TEST(Transformer, GettersTest) {
 }
 
 TEST(Transformer, MethodsTest) {
-    Transformer Tr();
+    Transformer Tr;
     ASSERT_TRUE(Tr.move());
     ASSERT_TRUE(Tr.fire());
     ASSERT_TRUE(Tr.transform());

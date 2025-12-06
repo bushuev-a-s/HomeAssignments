@@ -8,7 +8,7 @@
 #include "Driveable.h"
 
 TEST(Driveable, GettersTest) {
-    Gun* gun=new Gun();
+    Gun* gun=new Gun;
     Driveable Tr(gun);
     EXPECT_EQ(Tr.getAmmo(), 100);
     EXPECT_EQ(Tr.getLevel(), 10);
@@ -20,6 +20,6 @@ TEST(Driveable, GettersTest) {
 }
 
 TEST(Driveable, MethodsTest) {
-    Driveable Tr();
+    Driveable Tr;
     ASSERT_TRUE(Tr.obey());
 }

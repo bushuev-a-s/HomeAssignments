@@ -8,7 +8,7 @@
 #include "Gun.h"
 
 TEST(Gun, GettersTest) {
-    Gun gun();
+    Gun gun;
     gun.setDamage(15);
     gun.setRange(50);
     EXPECT_EQ(gun.getDamage(), 15);
@@ -16,6 +16,6 @@ TEST(Gun, GettersTest) {
 }
 
 TEST(Gun, MethodsTest) {
-    Gun gun();
+    Gun gun;
     ASSERT_TRUE(gun.upgrade());
 }
