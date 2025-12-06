@@ -12,5 +12,7 @@ Descendants   Decepticon    Autobot
                                   Driveable ----- Composition --- Pilot
 ## Build
 make
+## Test
+make test
 ## Run
-./Hierarchy
+./hierarchy
