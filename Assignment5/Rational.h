@@ -4,6 +4,8 @@
  * Home assignment 5
  */
 
+#include "Gcd.h"
+
 #ifndef RATIONAL_H
 #define RATIONAL_H
 class Rational {
