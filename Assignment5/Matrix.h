@@ -24,7 +24,7 @@ public:
     }
 
     void setElement(int row, int col, Type value) {
-        _matrix[row][col] = value;
+        _matrix[row-1][col-1] = value;
     }
 
     void setIdentityMatrix() {
@@ -62,13 +62,21 @@ public:
     }
 
     Type getElement(int row, int col) {
-        return _matrix[row][col];
+        return _matrix[row-1][col-1];
+    }
+
+    int getHeight() {
+        return _height;
+    }
+
+    int getWidth() {
+        return _width;
     }
 
     Matrix<Type> transpone() {
         Matrix<Type> resultMatrix(_width,_height);
-        for(int i=0; i<_height; ++i){
-            for(int j=0; j<_width; ++j){
+        for(int i=1; i<=_height; ++i){
+            for(int j=1; j<=_width; ++j){
                 resultMatrix.setElement(i,j,this.getElement(j,i));
         }
         return resultMatrix;
@@ -76,9 +84,19 @@ public:
 
     Matrix<Type> operator+(Matrix<Type> other) {
         Matrix<Type> resultMatrix(_height,_width);
-        for(int i=0; i<_height; ++i){
-            for(int j=0; j<_width; ++j){
+        for(int i=1; i<=_height; ++i){
+            for(int j=1; j<=_width; ++j){
                 resultMatrix.setElement(i,j,this.getElement(i,j)+other.getElement(i,j));
+            }
+        }
+        return resultMatrix;
+    }
+
+    Matrix<Type> operator-(Matrix<Type> other) {
+        Matrix<Type> resultMatrix(_height,_width);
+        for(int i=1; i<=_height; ++i){
+            for(int j=1; j<=_width; ++j){
+                resultMatrix.setElement(i,j,this.getElement(i,j)-other.getElement(i,j));
             }
         }
         return resultMatrix;
@@ -86,8 +104,8 @@ public:
 
     Matrix<Type> operator*(Type scalar) {
         Matrix<Type> resultMatrix(_height,_width);
-        for(int i=0; i<_height; ++i){
-            for(int j=0; j<_width; ++j){
+        for(int i=1; i<=_height; ++i){
+            for(int j=1; j<=_width; ++j){
                 resultMatrix.setElement(i,j,this.getElement(i,j)*scalar);
             }
         }
@@ -96,16 +114,30 @@ public:
 
     Matrix<Type> operator*(Matrix<Type> other) {
         Matrix<Type> resultMatrix(_height,other.getWidth());
-        for(int i=0; i<_height; ++i){
-            for(int j=0; j<other.getWidth(); ++j){
+        for(int i=1; i<=_height; ++i){
+            for(int j=1; j<=other.getWidth(); ++j){
                 Type value=0;
-                for(int k=0; k<_width; ++k){
+                for(int k=1; k<=_width; ++k){
                     value+=this.getElement(i,k)*other.getElement(k,j)
                 }
                 resultMatrix.setElement(i,j,value);
             }
         }
         return resultMatrix;
+    }
+
+    bool operator==(Matrix<Type> other) {
+        if (_height==other.getHeight() && _width==other.getWidth()) {
+            for(int i=1; i<=_height; i++) {
+                for(int j=1; j<=_width; j++) {
+                    if (this.getElement(i,j)!=other.getElement(i,j)) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
     }
 
 private:

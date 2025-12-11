@@ -26,6 +26,11 @@ public:
         _denominator*other.getDenominator);
     }
 
+    Rational operator-(Rational other) {
+        return result(_numerator*other.getDenominator-other.getNumerator*_denominator,
+        _denominator*other.getDenominator);
+    }
+
     Rational operator*(Rational other) {
         return result(_numerator*other.getNumerator,_denominator*other.getDenominator);
     }
@@ -36,6 +41,13 @@ public:
 
     Rational operator=(int other) {
         return result(other,1)
+    }
+
+    Bool operator==(Rational other) {
+        if (_numerator==other.getNumerator() && _denominator==other.getDenominator) {
+            return true;
+        }
+        return false
     }
 private:
     int _numerator;
