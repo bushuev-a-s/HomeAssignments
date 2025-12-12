@@ -21,13 +21,13 @@ TEST(Rational, TestInvariance) {
     Rational b=0;
     EXPECT_EQ(b,Rational(0,1));
     EXPECT_EQ(b,Rational(0,52));
-}
+};
 
 TEST(Rational, TestOperations) {
     EXPECT_EQ(Rational(1,4)+Rational(1,6),Rational(5,12));
     EXPECT_EQ(Rational(1,4)-Rational(1,6),Rational(1,12));
     EXPECT_EQ(Rational(3,4)*Rational(5,6),Rational(15,24));
-}
+};
 
 TEST(Matrix, TestRingAxioms) {
     Matrix<Rational> a(2,2);
@@ -49,18 +49,22 @@ TEST(Matrix, TestRingAxioms) {
     EXPECT_EQ((a+b)+c,a+(b+c));
     Matrix<Rational> zero(2,2);
     zero.setZeroMatrix();
-    EXPECT_EQ((a-a,zero);
+    EXPECT_EQ(a-a,zero);
     EXPECT_EQ((a*b)*c,a*(b*c));
     EXPECT_EQ((a+b)*c,a*c+b*c);
-    EXPECT_EQ(c*(a+b),с*a+c*b);
+    EXPECT_EQ(c*(a+b),c*a+c*b);
     Matrix<Rational> identity(2,2);
     identity.setIdentityMatrix();
     EXPECT_EQ(a*identity,a);
     EXPECT_EQ(identity*a,a);
+    EXPECT_EQ((identity*a).getElement(1,1), a.getElement(1,1));
+    EXPECT_EQ((identity*a).getElement(1,2), a.getElement(1,2));
+    EXPECT_EQ((identity*a).getElement(2,1), a.getElement(2,1));
+    EXPECT_EQ((identity*a).getElement(2,2), a.getElement(2,2));
     EXPECT_EQ(a*zero,zero);
     EXPECT_EQ(zero*a,zero);
-    EXPECT_EQ((-1)*a,-a);
-}
+    EXPECT_EQ(a*(-1),-a);
+};
 
 TEST(Matrix, TestIntTranspone) {
     Matrix<int> matrix(2,3);
@@ -77,9 +81,9 @@ TEST(Matrix, TestIntTranspone) {
     expect.setElement(2,2,5);
     expect.setElement(3,1,3);
     expect.setElement(3,2,6);
-    Matrix<int> test=matrix.transpone()
+    Matrix<int> test=matrix.transpone();
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestFloatTranspone) {
     Matrix<float> matrix(2,3);
@@ -96,9 +100,9 @@ TEST(Matrix, TestFloatTranspone) {
     expect.setElement(2,2,5.5);
     expect.setElement(3,1,3.5);
     expect.setElement(3,2,6.5);
-    Matrix<float> test=matrix.transpone()
+    Matrix<float> test=matrix.transpone();
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestRatTranspone) {
     Matrix<Rational> matrix(2,3);
@@ -115,9 +119,9 @@ TEST(Matrix, TestRatTranspone) {
     expect.setElement(2,2,Rational(5,2));
     expect.setElement(3,1,Rational(3,2));
     expect.setElement(3,2,Rational(6,2));
-    Matrix<Rational> test=matrix.transpone()
+    Matrix<Rational> test=matrix.transpone();
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestIntAddition) {
     Matrix<int> a(2,3);
@@ -143,7 +147,7 @@ TEST(Matrix, TestIntAddition) {
     expect.setElement(2,3,7);
     Matrix<int> test=a+b;
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestFloatAddition) {
     Matrix<float> a(2,3);
@@ -169,7 +173,7 @@ TEST(Matrix, TestFloatAddition) {
     expect.setElement(2,3,8);
     Matrix<float> test=a+b;
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestRatAddition) {
     Matrix<Rational> a(2,3);
@@ -195,7 +199,7 @@ TEST(Matrix, TestRatAddition) {
     expect.setElement(2,3,Rational(7,2));
     Matrix<Rational> test=a+b;
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestIntScalarMultiplication) {
     Matrix<int> a(2,3);
@@ -214,7 +218,7 @@ TEST(Matrix, TestIntScalarMultiplication) {
     expect.setElement(2,3,12);
     Matrix<int> test=a*2;
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestFloatScalarMultiplication) {
     Matrix<float> a(2,3);
@@ -232,8 +236,13 @@ TEST(Matrix, TestFloatScalarMultiplication) {
     expect.setElement(2,2,0.55);
     expect.setElement(2,3,0.65);
     Matrix<float> test=a*0.1;
-    EXPECT_EQ(test,expect);
-}
+    EXPECT_NEAR(test.getElement(1,1), expect.getElement(1,1), 1e-5);
+    EXPECT_NEAR(test.getElement(1,2), expect.getElement(1,2), 1e-5);
+    EXPECT_NEAR(test.getElement(1,3), expect.getElement(1,3), 1e-5);
+    EXPECT_NEAR(test.getElement(2,1), expect.getElement(2,1), 1e-5);
+    EXPECT_NEAR(test.getElement(2,2), expect.getElement(2,2), 1e-5);
+    EXPECT_NEAR(test.getElement(2,3), expect.getElement(2,3), 1e-5);
+};
 
 TEST(Matrix, TestRatScalarMultiplication) {
     Matrix<Rational> a(2,3);
@@ -252,7 +261,7 @@ TEST(Matrix, TestRatScalarMultiplication) {
     expect.setElement(2,3,6);
     Matrix<Rational> test=a*Rational(2,3);
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestIntMatrixMultiplication) {
     Matrix<int> a(2,4);
@@ -286,7 +295,7 @@ TEST(Matrix, TestIntMatrixMultiplication) {
     expect.setElement(2,3,210);
     Matrix<int> test=a*b;
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestFloatMatrixMultiplication) {
     Matrix<float> a(2,4);
@@ -320,7 +329,7 @@ TEST(Matrix, TestFloatMatrixMultiplication) {
     expect.setElement(2,3,239);
     Matrix<float> test=a*b;
     EXPECT_EQ(test,expect);
-}
+};
 
 TEST(Matrix, TestRatMatrixMultiplication) {
     Matrix<Rational> a(2,4);
@@ -354,4 +363,4 @@ TEST(Matrix, TestRatMatrixMultiplication) {
     expect.setElement(2,3,Rational(105,2));
     Matrix<Rational> test=a*b;
     EXPECT_EQ(test,expect);
-}
+};

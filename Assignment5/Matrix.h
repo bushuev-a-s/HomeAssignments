@@ -10,9 +10,9 @@ template<typename Type>
 class Matrix {
 public:
     Matrix(int height, int width) : _height(height), _width(width) {
-        _matrix = new Type* [_height];
+        _matrix = new Type* [height];
         for(int i=0; i<_height; ++i){
-            _matrix[i] = new Type[_width];
+            _matrix[i] = new Type[width];
         }
     }
 
@@ -48,9 +48,9 @@ public:
         }
     }
 
-    Type** getMatrix() {
-        arr=new Type*[_height]
-        for(int i=0, i<height, ++i) {
+    Type** getMatrix() const {
+        Type** arr=new Type*[_height];
+        for(int i=0; i<_height; ++i) {
             arr[i]=new Type[_width];
         }
         for(int i=0; i<_height; ++i){
@@ -61,64 +61,75 @@ public:
         return arr;
     }
 
-    Type getElement(int row, int col) {
+    Type getElement(int row, int col) const {
         return _matrix[row-1][col-1];
     }
 
-    int getHeight() {
+    int getHeight() const {
         return _height;
     }
 
-    int getWidth() {
+    int getWidth() const {
         return _width;
     }
 
     Matrix<Type> transpone() {
         Matrix<Type> resultMatrix(_width,_height);
-        for(int i=1; i<=_height; ++i){
-            for(int j=1; j<=_width; ++j){
-                resultMatrix.setElement(i,j,this.getElement(j,i));
-        }
-        return resultMatrix;
-    }
-
-    Matrix<Type> operator+(Matrix<Type> other) {
-        Matrix<Type> resultMatrix(_height,_width);
-        for(int i=1; i<=_height; ++i){
-            for(int j=1; j<=_width; ++j){
-                resultMatrix.setElement(i,j,this.getElement(i,j)+other.getElement(i,j));
+        for(int i=1; i<=_width; ++i){
+            for(int j=1; j<=_height; ++j){
+                resultMatrix.setElement(i,j,this->getElement(j,i));
             }
         }
         return resultMatrix;
     }
 
-    Matrix<Type> operator-(Matrix<Type> other) {
+    Matrix<Type> operator+(const Matrix<Type>& other) const {
         Matrix<Type> resultMatrix(_height,_width);
         for(int i=1; i<=_height; ++i){
             for(int j=1; j<=_width; ++j){
-                resultMatrix.setElement(i,j,this.getElement(i,j)-other.getElement(i,j));
+                resultMatrix.setElement(i,j,this->getElement(i,j)+other.getElement(i,j));
             }
         }
         return resultMatrix;
     }
 
-    Matrix<Type> operator*(Type scalar) {
+    Matrix<Type> operator-(const Matrix<Type>& other) const {
         Matrix<Type> resultMatrix(_height,_width);
         for(int i=1; i<=_height; ++i){
             for(int j=1; j<=_width; ++j){
-                resultMatrix.setElement(i,j,this.getElement(i,j)*scalar);
+                resultMatrix.setElement(i,j,this->getElement(i,j)-other.getElement(i,j));
             }
         }
         return resultMatrix;
     }
 
-    Matrix<Type> operator*(Matrix<Type> other) {
+    Matrix<Type> operator-() const {
+        Matrix<Type> resultMatrix(_height,_width);
+        for(int i=1; i<=_height; ++i){
+            for(int j=1; j<=_width; ++j){
+                resultMatrix.setElement(i,j,-this->getElement(i,j));
+            }
+        }
+        return resultMatrix;
+    }
+
+    Matrix<Type> operator*(const Type& scalar) const {
+        Matrix<Type> resultMatrix(_height,_width);
+        for(int i=1; i<=_height; ++i){
+            for(int j=1; j<=_width; ++j){
+                resultMatrix.setElement(i,j,this->getElement(i,j)*scalar);
+            }
+        }
+        return resultMatrix;
+    }
+
+    Matrix<Type> operator*(const Matrix<Type>& other) const {
         Matrix<Type> resultMatrix(_height,other.getWidth());
         for(int i=1; i<=_height; ++i){
             for(int j=1; j<=other.getWidth(); ++j){
                 Type value=0;
                 for(int k=1; k<=_width; ++k){
-                    value+=this.getElement(i,k)*other.getElement(k,j)
+                    value+=this->getElement(i,k)*other.getElement(k,j);
                 }
                 resultMatrix.setElement(i,j,value);
             }
@@ -126,11 +137,11 @@ public:
         return resultMatrix;
     }
 
-    bool operator==(Matrix<Type> other) {
+    bool operator==(const Matrix<Type>& other) const {
         if (_height==other.getHeight() && _width==other.getWidth()) {
             for(int i=1; i<=_height; i++) {
                 for(int j=1; j<=_width; j++) {
-                    if (this.getElement(i,j)!=other.getElement(i,j)) {
+                    if (this->getElement(i,j)!=other.getElement(i,j)) {
                         return false;
                     }
                 }
@@ -141,8 +152,8 @@ public:
     }
 
 private:
-    int _width;
     int _height;
+    int _width;
     Type** _matrix;
 };
 #endif
