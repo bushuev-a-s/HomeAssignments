@@ -16,19 +16,12 @@ int gcd(int a, int b) {
     if (b<0) {
         return -gcd(a,-b);
     }
-    if (a<b) {
-        int m=a;
-        int n=b;
+    int remainder;
+    while (b!=0) {
+        remainder=a%b;
+        a=b;
+        b=remainder;
     }
-    else {
-        int m=b;
-        int n=a;
-    }
-    int k;
-    while (n=0) {
-        k=n;
-        n=m-n*(m/n);
-        m=k;
-    return m;
-}
+    return a;
+};
 #endif
