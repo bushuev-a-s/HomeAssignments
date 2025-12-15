@@ -2,14 +2,16 @@ PROJECT = matrix
 CC=g++
 FLAGS=-std=c++17 -Wall -Wextra -pedantic
 LIBS=-lgtest -lgtest_main -lpthread
+SRC = test.cpp Rational.cpp
+OBJ = $(SRC:.cpp=.o)
 
 all: $(PROJECT)
 
-$(PROJECT): test.o
+$(PROJECT): $(OBJ)
 	$(CC) $(FLAGS) $^ $(LIBS) -o $@
 
-test.o: test.cpp
-	$(CC) $(FLAGS) -c test.cpp
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $<
 
 clean:
 	rm -f *.o $(PROJECT)
