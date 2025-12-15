@@ -23,10 +23,6 @@ void Driveable::setSeats(int seats) {
     _seats=seats;
 };
 
-Pilot Driveable::getPilot() {
+Pilot& Driveable::getPilot() {
     return _pilot;
-};
-
-void Driveable::setPilot(Pilot pilot) {
-    _pilot=pilot;
 };

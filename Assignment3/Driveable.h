@@ -20,10 +20,9 @@ public:
     bool obey();
 
     void setSeats(int evilness);
-    void setPilot(Pilot pilot);
 
     int getSeats();
-    Pilot getPilot();
+    Pilot& getPilot();
 private:
     int _seats;
     Pilot _pilot;
