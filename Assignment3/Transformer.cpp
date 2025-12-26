@@ -67,9 +67,3 @@ void Transformer::setGun(Gun* gun)
 {
     _gun=gun;
 }
-
-std::ostream& operator<<(std::ostream& out, const Transformer& t)
-{
-    out << t.printClass();
-    return out;
-}
