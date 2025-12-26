@@ -11,6 +11,7 @@
 #include "Decepticon.h"
 #include "Driveable.h"
 
+
 TEST(Transformer, ParentTypization)
 {
     std::vector<Transformer*> test;
@@ -28,15 +29,27 @@ TEST(Transformer, ParentTypization)
     }
     for(int i=0; i<3; i++)
     {
+        std::ostringstream stream;
+        stream << *test[i];
+        EXPECT_EQ(stream.str(), "Autobot");
         EXPECT_EQ(test[i]->printClass(), "Autobot");
+        ASSERT_TRUE(test[i]->transform());
     }
     for(int i=3; i<6; i++)
     {
+        std::ostringstream stream;
+        stream << *test[i];
+        EXPECT_EQ(stream.str(), "Decepticon");
         EXPECT_EQ(test[i]->printClass(), "Decepticon");
+        ASSERT_TRUE(test[i]->transform());
     }
     for(int i=6; i<9; i++)
     {
+        std::ostringstream stream;
+        stream << *test[i];
+        EXPECT_EQ(stream.str(), "Driveable autobot");
         EXPECT_EQ(test[i]->printClass(), "Driveable autobot");
+        ASSERT_TRUE(test[i]->transform());
     }
     for(size_t i=0; i<test.size(); i++)
     {

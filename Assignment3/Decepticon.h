@@ -25,6 +25,7 @@ public:
     int getEvilness();
     int getToughness();
 
+    bool transform() override;
     std::string printClass() const override;
 private:
     int _evilness;

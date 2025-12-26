@@ -19,11 +19,6 @@ bool Transformer::fire()
     return true;
 }
 
-bool Transformer::transform()
-{
-    return true;
-}
-
 Transformer::Transformer(int ammo, int level, int exp, Gun* gun)
     : _ammo(ammo), _level(level), _exp(exp), _gun(gun) {}
 

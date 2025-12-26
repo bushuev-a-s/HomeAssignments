@@ -20,7 +20,7 @@ public:
 
     bool move();
     bool fire();
-    bool transform();
+    virtual bool transform() = 0;
 
     void setAmmo(int ammo);
     void setLevel(int level);
@@ -33,6 +33,11 @@ public:
     Gun* getGun();
 
     virtual std::string printClass() const = 0;
+
+    friend std::ostream& operator<<(std::ostream& out, const Transformer& t) {
+        out << t.printClass();
+        return out;
+    }
 
     virtual ~Transformer() = default;
 private:

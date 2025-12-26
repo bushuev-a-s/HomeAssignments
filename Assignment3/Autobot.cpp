@@ -5,7 +5,9 @@
  * Cpp file for Autobot class
  */
 
+#include "Transformer.h"
 #include "Autobot.h"
+#include <iostream>
 
 bool Autobot::ultimate()
 {
@@ -46,4 +48,9 @@ void Autobot::setSize(int size)
 std::string Autobot::printClass() const
 {
     return "Autobot";
+}
+
+bool Autobot::transform() {
+    std::cout<<*this<<" transformed";
+    return true;
 }

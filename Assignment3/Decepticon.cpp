@@ -5,7 +5,9 @@
  * Cpp file for Decepticon class
  */
 
+#include "Transformer.h"
 #include "Decepticon.h"
+#include <iostream>
 
 bool Decepticon::destroy()
 {
@@ -39,4 +41,9 @@ void Decepticon::setToughness(int toughness)
 std::string Decepticon::printClass() const
 {
     return "Decepticon";
+}
+
+bool Decepticon::transform() {
+    std::cout<<*this<<" transformed";
+    return true;
 }

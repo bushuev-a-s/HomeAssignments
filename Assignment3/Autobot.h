@@ -25,6 +25,7 @@ public:
     int getSize();
     int getStrength();
 
+    bool transform() override;
     std::string printClass() const override;
 private:
     int _size;
