@@ -9,11 +9,14 @@
 
 #ifndef PILOT_H
 #define PILOT_H
-class Pilot{
+class Pilot
+{
 public:
     bool drive();
     std::string getName();
     void setName(std::string);
+
+    std::string printClass() const;
 private:
     std::string _name;
 };

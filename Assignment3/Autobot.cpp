@@ -7,31 +7,43 @@
 
 #include "Autobot.h"
 
-bool Autobot::ultimate() {
+bool Autobot::ultimate()
+{
     return true;
 };
 
-Autobot::Autobot() {
+Autobot::Autobot()
+{
     _size=15;
     _strength=50;
 };
 
-Autobot::Autobot(Gun* gun): Transformer(gun), _size(15), _strength(50) {
+Autobot::Autobot(Gun* gun): Transformer(gun), _size(15), _strength(50)
+{
 
 };
 
-int Autobot::getStrength() {
+int Autobot::getStrength()
+{
     return _strength;
 };
 
-void Autobot::setStrength(int strength) {
+void Autobot::setStrength(int strength)
+{
     _strength=strength;
 };
 
-int Autobot::getSize() {
+int Autobot::getSize()
+{
     return _size;
 };
 
-void Autobot::setSize(int size) {
+void Autobot::setSize(int size)
+{
     _size=size;
 };
+
+std::string Autobot::printClass() const
+{
+    return "Autobot";
+}

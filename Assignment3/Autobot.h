@@ -11,7 +11,8 @@
 #include "Transformer.h"
 #include "Gun.h"
 
-class Autobot: public Transformer {
+class Autobot: public Transformer
+{
 public:
     Autobot();
     Autobot(Gun* gun);
@@ -23,6 +24,8 @@ public:
 
     int getSize();
     int getStrength();
+
+    std::string printClass() const override;
 private:
     int _size;
     int _strength;

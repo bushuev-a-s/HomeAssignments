@@ -7,7 +7,8 @@
 
 #include "Gun.h"
 
-bool Gun::upgrade() {
+bool Gun::upgrade()
+{
     return true;
 }
 /*
@@ -16,18 +17,33 @@ Gun::Gun() {
     _damage=5;
 };
 */
-int Gun::getRange() {
+int Gun::getRange()
+{
     return _range;
 }
 
-void Gun::setRange(int range) {
+void Gun::setRange(int range)
+{
     _range=range;
 }
 
-int Gun::getDamage() {
+int Gun::getDamage()
+{
     return _damage;
 }
 
-void Gun::setDamage(int damage) {
+void Gun::setDamage(int damage)
+{
     _damage=damage;
+}
+
+std::string Gun::printClass() const
+{
+    return "Gun";
+}
+
+std::ostream& operator<<(std::ostream& out, const Gun& t)
+{
+    out << t.printClass();
+    return out;
 }

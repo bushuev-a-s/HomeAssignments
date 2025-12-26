@@ -7,7 +7,8 @@
 
 #include "Decepticon.h"
 
-bool Decepticon::destroy() {
+bool Decepticon::destroy()
+{
     return true;
 }
 
@@ -15,18 +16,27 @@ Decepticon::Decepticon(): _evilness(50), _toughness(15) {}
 
 Decepticon::Decepticon(Gun* gun): Transformer(gun), _evilness(50), _toughness(15) {}
 
-int Decepticon::getEvilness() {
+int Decepticon::getEvilness()
+{
     return _evilness;
 }
 
-void Decepticon::setEvilness(int evilness) {
+void Decepticon::setEvilness(int evilness)
+{
     _evilness=evilness;
 }
 
-int Decepticon::getToughness() {
+int Decepticon::getToughness()
+{
     return _toughness;
 }
 
-void Decepticon::setToughness(int toughness) {
+void Decepticon::setToughness(int toughness)
+{
     _toughness=toughness;
+}
+
+std::string Decepticon::printClass() const
+{
+    return "Decepticon";
 }

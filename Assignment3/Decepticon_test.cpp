@@ -8,7 +8,8 @@
 #include "Decepticon.h"
 #include "Gun.h"
 
-TEST(Decepticon, GettersTest) {
+TEST(Decepticon, GettersTest)
+{
     Gun* gun=new Gun;
     Decepticon Tr(gun);
     EXPECT_EQ(Tr.getAmmo(), 100);
@@ -20,7 +21,9 @@ TEST(Decepticon, GettersTest) {
     delete gun;
 }
 
-TEST(Decepticon, MethodsTest) {
+TEST(Decepticon, MethodsTest)
+{
     Decepticon Tr;
     ASSERT_TRUE(Tr.destroy());
+    EXPECT_EQ(Tr.printClass(), "Decepticon");
 }

@@ -5,19 +5,41 @@
  */
 
 #include <gtest/gtest.h>
+#include <vector>
 #include "Transformer.h"
+#include "Autobot.h"
+#include "Decepticon.h"
+#include "Driveable.h"
 
-TEST(Transformer, GettersTest) {
-    Transformer Tr;
-    EXPECT_EQ(Tr.getAmmo(), 100);
-    EXPECT_EQ(Tr.getLevel(), 10);
-    EXPECT_EQ(Tr.getExp(), 300);
-    EXPECT_EQ(Tr.getGun(), nullptr);
-}
-
-TEST(Transformer, MethodsTest) {
-    Transformer Tr;
-    ASSERT_TRUE(Tr.move());
-    ASSERT_TRUE(Tr.fire());
-    ASSERT_TRUE(Tr.transform());
+TEST(Transformer, ParentTypization)
+{
+    std::vector<Transformer*> test;
+    for(int i=0; i<3; i++)
+    {
+        test.push_back(new Autobot);
+    }
+    for(int i=0; i<3; i++)
+    {
+        test.push_back(new Decepticon);
+    }
+    for(int i=0; i<3; i++)
+    {
+        test.push_back(new Driveable);
+    }
+    for(int i=0; i<3; i++)
+    {
+        EXPECT_EQ(test[i]->printClass(), "Autobot");
+    }
+    for(int i=3; i<6; i++)
+    {
+        EXPECT_EQ(test[i]->printClass(), "Decepticon");
+    }
+    for(int i=6; i<9; i++)
+    {
+        EXPECT_EQ(test[i]->printClass(), "Driveable autobot");
+    }
+    for(size_t i=0; i<test.size(); i++)
+    {
+        delete test[i];
+    }
 }

@@ -12,7 +12,8 @@
 #include "Pilot.h"
 #include "Gun.h"
 
-class Driveable: public Autobot {
+class Driveable: public Autobot
+{
 public:
     Driveable(Gun* gun);
     Driveable();
@@ -23,6 +24,8 @@ public:
 
     int getSeats();
     Pilot& getPilot();
+
+    std::string printClass() const override;
 private:
     int _seats;
     Pilot _pilot;

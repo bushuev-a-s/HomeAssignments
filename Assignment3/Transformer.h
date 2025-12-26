@@ -9,8 +9,10 @@
 #define TRANSFORMER_H
 
 #include "Gun.h"
+#include <string>
 
-class Transformer {
+class Transformer
+{
 public:
     Transformer(int ammo, int level, int exp, Gun* gun);
     Transformer();
@@ -30,7 +32,9 @@ public:
     int getExp();
     Gun* getGun();
 
-    ~Transformer();
+    virtual std::string printClass() const = 0;
+
+    virtual ~Transformer() = default;
 private:
     int _ammo;
     int _level;

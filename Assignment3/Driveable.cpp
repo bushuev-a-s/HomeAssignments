@@ -7,7 +7,8 @@
 
 #include "Driveable.h"
 
-bool Driveable::obey() {
+bool Driveable::obey()
+{
     return true;
 };
 
@@ -15,14 +16,22 @@ Driveable::Driveable(): _seats(4), _pilot() {};
 
 Driveable::Driveable(Gun* gun): Autobot(gun), _seats(4), _pilot() {};
 
-int Driveable::getSeats() {
+int Driveable::getSeats()
+{
     return _seats;
 };
 
-void Driveable::setSeats(int seats) {
+void Driveable::setSeats(int seats)
+{
     _seats=seats;
 };
 
-Pilot& Driveable::getPilot() {
+Pilot& Driveable::getPilot()
+{
     return _pilot;
 };
+
+std::string Driveable::printClass() const
+{
+    return "Driveable autobot";
+}

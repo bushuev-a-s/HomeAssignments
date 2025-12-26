@@ -7,15 +7,28 @@
 
 #include "Pilot.h"
 
-bool Pilot::drive() {
+bool Pilot::drive()
+{
     return true;
 };
 
-std::string Pilot::getName() {
+std::string Pilot::getName()
+{
     return _name;
 };
 
-void Pilot::setName(std::string name) {
+void Pilot::setName(std::string name)
+{
     _name=name;
 };
 
+std::string Pilot::printClass() const
+{
+    return "Pilot";
+}
+
+std::ostream& operator<<(std::ostream& out, const Pilot& t)
+{
+    out << t.printClass();
+    return out;
+}
