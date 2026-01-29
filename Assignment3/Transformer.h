@@ -9,8 +9,10 @@
 #define TRANSFORMER_H
 
 #include "Gun.h"
+#include <string>
 
-class Transformer {
+class Transformer
+{
 public:
     Transformer(int ammo, int level, int exp, Gun* gun);
     Transformer();
@@ -18,7 +20,7 @@ public:
 
     bool move();
     bool fire();
-    bool transform();
+    virtual bool transform() = 0;
 
     void setAmmo(int ammo);
     void setLevel(int level);
@@ -30,7 +32,14 @@ public:
     int getExp();
     Gun* getGun();
 
-    ~Transformer();
+    virtual std::string printClass() const = 0;
+
+    friend std::ostream& operator<<(std::ostream& out, const Transformer& t) {
+        out << t.printClass();
+        return out;
+    }
+
+    virtual ~Transformer() = default;
 private:
     int _ammo;
     int _level;

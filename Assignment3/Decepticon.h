@@ -11,7 +11,8 @@
 #include "Transformer.h"
 #include "Gun.h"
 
-class Decepticon: public Transformer {
+class Decepticon: public Transformer
+{
 public:
     Decepticon();
     Decepticon(Gun* gun);
@@ -23,6 +24,9 @@ public:
 
     int getEvilness();
     int getToughness();
+
+    bool transform() override;
+    std::string printClass() const override;
 private:
     int _evilness;
     int _toughness;

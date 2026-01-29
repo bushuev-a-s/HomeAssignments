@@ -7,16 +7,15 @@
 
 #include "Transformer.h"
 #include "Gun.h"
+#include <ostream>
 
-bool Transformer::move() {
+bool Transformer::move()
+{
     return true;
 }
 
-bool Transformer::fire() {
-    return true;
-}
-
-bool Transformer::transform() {
+bool Transformer::fire()
+{
     return true;
 }
 
@@ -29,36 +28,42 @@ Transformer::Transformer()
 Transformer::Transformer(Gun* gun)
     : _ammo(100), _level(10), _exp(300), _gun(gun) {}
 
-Transformer::~Transformer() {}
-
-int Transformer::getAmmo() {
+int Transformer::getAmmo()
+{
     return _ammo;
 }
 
-void Transformer::setAmmo(int ammo) {
+void Transformer::setAmmo(int ammo)
+{
     _ammo=ammo;
 }
 
-int Transformer::getLevel() {
+int Transformer::getLevel()
+{
     return _level;
 }
 
-void Transformer::setLevel(int level) {
+void Transformer::setLevel(int level)
+{
     _level=level;
 }
 
-int Transformer::getExp() {
+int Transformer::getExp()
+{
     return _exp;
 }
 
-void Transformer::setExp(int exp) {
+void Transformer::setExp(int exp)
+{
     _exp=exp;
 }
 
-Gun* Transformer::getGun() {
+Gun* Transformer::getGun()
+{
     return _gun;
 }
 
-void Transformer::setGun(Gun* gun) {
+void Transformer::setGun(Gun* gun)
+{
     _gun=gun;
 }

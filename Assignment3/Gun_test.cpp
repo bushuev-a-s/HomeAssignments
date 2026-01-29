@@ -7,7 +7,8 @@
 #include <gtest/gtest.h>
 #include "Gun.h"
 
-TEST(Gun, GettersTest) {
+TEST(Gun, GettersTest)
+{
     Gun gun;
     gun.setDamage(15);
     gun.setRange(50);
@@ -15,7 +16,9 @@ TEST(Gun, GettersTest) {
     EXPECT_EQ(gun.getRange(), 50);
 }
 
-TEST(Gun, MethodsTest) {
+TEST(Gun, MethodsTest)
+{
     Gun gun;
     ASSERT_TRUE(gun.upgrade());
+    EXPECT_EQ(gun.printClass(), "Gun");
 }

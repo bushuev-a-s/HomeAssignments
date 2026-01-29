@@ -8,7 +8,8 @@
 #include "Driveable.h"
 #include "Gun.h"
 
-TEST(Driveable, GettersTest) {
+TEST(Driveable, GettersTest)
+{
     Gun* gun=new Gun;
     Driveable Tr(gun);
     EXPECT_EQ(Tr.getAmmo(), 100);
@@ -19,7 +20,9 @@ TEST(Driveable, GettersTest) {
     delete gun;
 }
 
-TEST(Driveable, MethodsTest) {
+TEST(Driveable, MethodsTest)
+{
     Driveable Tr;
     ASSERT_TRUE(Tr.obey());
+    EXPECT_EQ(Tr.printClass(), "Driveable autobot");
 }

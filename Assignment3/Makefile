@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -I. -fPIC
+CXXFLAGS = -std=c++17 -Wall -I. -fPIC -Werror -Wpedantic
 ARFLAGS = rcs
 LIBS = -lgtest -lgtest_main -lpthread
 

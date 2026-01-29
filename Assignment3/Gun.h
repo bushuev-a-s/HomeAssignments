@@ -7,7 +7,11 @@
 
 #ifndef GUN_H
 #define GUN_H
-class Gun {
+
+#include <string>
+
+class Gun
+{
 public:
     bool upgrade();
     void setRange(int range);
@@ -15,6 +19,8 @@ public:
     int getRange();
     int getDamage();
     //Gun();
+
+    std::string printClass() const;
 private:
     int _range;
     int _damage;

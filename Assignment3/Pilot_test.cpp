@@ -7,13 +7,16 @@
 #include <gtest/gtest.h>
 #include "Pilot.h"
 
-TEST(Pilot, GettersTest) {
+TEST(Pilot, GettersTest)
+{
     Pilot pilot;
     pilot.setName("Max");
     EXPECT_EQ(pilot.getName(), "Max");
 }
 
-TEST(Pilot, MethodsTest) {
+TEST(Pilot, MethodsTest)
+{
     Pilot pilot;
     ASSERT_TRUE(pilot.drive());
+    EXPECT_EQ(pilot.printClass(), "Pilot");
 }
